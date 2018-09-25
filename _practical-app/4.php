@@ -20,9 +20,22 @@
 
 	Step 2: Make a function that passes parameters and call it using parameter values
 
-
  */
 
+// Step 1
+function add_number() {
+    return 2 + 3;
+}
+
+echo add_number();
+echo '<br>';
+
+
+function hello($greeting) {
+    return 'Hello ' . $greeting;
+}
+
+echo hello('fikar');
 	
 ?>
 
