@@ -25,6 +25,43 @@
 
  */
 
+// Step 1
+$number1 = 20;
+$number2 = 30;
+
+if ($number1 < $number2) {
+    echo 'I love PHP';
+} else if ($number1 > $number2) {
+    echo 'I love ASP.NET';
+} else {
+    echo 'I love my wife';
+}
+echo '<br>';
+
+// Step 2
+for ($i = 1; $i < 11; $i++) {
+    echo "$i<br>";
+}
+
+// Step 3
+$number = 30;
+
+switch ($number) {
+    case $number > 50:
+        echo 'Great';
+        break;
+    case $number < 20:
+        echo 'Apa urusan anda';
+        break;
+    case $number = 30:
+        echo 'Bukan hak anda';
+        break;
+    case $number < 30:
+        echo 'Saya akhiri';
+        break;
+    default:
+        echo 'Acua';
+}
 	
 ?>
 
