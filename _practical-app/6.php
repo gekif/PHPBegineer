@@ -20,8 +20,8 @@
  */
 
 if (isset($_POST['submit'])) {
-    if (empty($_POST['username']) && empty($_POST['PASSWORD'])) {
-        echo 'Insert your username and password';
+    if ($_POST['username'] == '' || $_POST['password'] == ''){
+        echo 'insert your username and password';
     } else {
         echo "Your username is $_POST[username] and your password is $_POST[password]";
     }
