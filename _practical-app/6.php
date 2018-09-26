@@ -19,13 +19,66 @@
 /*  Step1: Make a form that submits one value to POST super global
  */
 
-if (isset($_POST['submit'])) {
+// Method 1
+/*if (isset($_POST['submit'])) {
     if ($_POST['username'] == '' || $_POST['password'] == ''){
         echo 'insert your username and password';
     } else {
         echo "Your username is $_POST[username] and your password is $_POST[password]";
     }
+}*/
+
+// Method 2
+/*$require = ['username', 'password'];
+$error = true;
+foreach ($require as $field) {
+    if (!isset($_POST[$field]) || empty($_POST[$field]))  {
+        $error = false;
+    }
 }
+
+if (isset($_POST['submit'])) {
+    if (!$error) {
+        echo 'insert your username and password';
+    } else {
+        echo "Your username is $_POST[username] and your password is $_POST[password]";
+    }
+}*/
+
+// Method 3
+/*$require = ['username', 'password'];
+$error = false;
+foreach ($require as $field) {
+    if ($_POST[$field] == '')  {
+        $error = true;
+    }
+}
+
+if (isset($_POST['submit'])) {
+    if ($error) {
+        echo 'insert your username and password';
+    } else {
+        echo "Your username is $_POST[username] and your password is $_POST[password]";
+    }
+}*/
+
+// Method 4
+/*$require = ['username', 'password'];
+$error = false;
+foreach ($require as $field) {
+    if (empty($_POST[$field]))  {
+        $error = true;
+    }
+}
+
+if (isset($_POST['submit'])) {
+    if ($error) {
+        echo 'insert your username and password';
+    } else {
+        echo "Your username is $_POST[username] and your password is $_POST[password]";
+    }
+}*/
+
 
 
 
