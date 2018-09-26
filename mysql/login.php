@@ -2,7 +2,22 @@
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    echo "$username and $password";
+
+    $connection = mysqli_connect('localhost', 'root', 'password', 'loginapp');
+
+    if ($connection) {
+        echo 'we are connected';
+    } else {
+        die('Database failed to connect');
+    }
+
+
+    /*if ($username && $password) {
+        echo $username;
+        echo $password;
+    } else {
+        echo 'Nay';
+    }*/
 }
 ?>
 
@@ -13,7 +28,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>MySQL</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 <body>
