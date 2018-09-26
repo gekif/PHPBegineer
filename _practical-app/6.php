@@ -19,9 +19,15 @@
 /*  Step1: Make a form that submits one value to POST super global
  */
 
-if(isset($_POST['submit'])) {
-    echo "Your Username is $_POST[username] and your password is $_POST[password]";
+if (isset($_POST['submit'])) {
+    if (empty($_POST['username']) && empty($_POST['PASSWORD'])) {
+        echo 'Insert your username and password';
+    } else {
+        echo "Your username is $_POST[username] and your password is $_POST[password]";
+    }
 }
+
+
 
 ?>
 <form action="6.php" method="post">
