@@ -1,12 +1,6 @@
 <?php
 
-$connection = mysqli_connect('localhost', 'root', 'password', 'loginapp');
-
-if ($connection) {
-    echo '';
-} else {
-    die('Database failed to connect, the error says: ' . mysqli_error($connection));
-}
+include 'db.php';
 
 $query = "SELECT * FROM users";
 

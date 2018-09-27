@@ -2,10 +2,20 @@
 
 include 'db.php';
 
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+$usename = $_POST['username'];
+$password = $_POST['password'];
+$id = $_POST['id'];
+
+$query = "UPDATE users SET username = '$username', password = '$password' WHERE 
+          id = $id ";
+
+$result = mysqli_query($connection, $query);
+
+if (!$result) {
+    die('Data cannot update, the error says: ' . mysqli_error($connection));
 }
+
+
 ?>
 
 <!doctype html>
@@ -23,16 +33,25 @@ if (isset($_POST['submit'])) {
 <div class="container">
 
     <div class="col-xs-6">
-        <form method="post" action="login.php">
+        <form method="post" action="login_create.php">
             <div class="form-group">
                 <label for="username">Username</label>
-                 <input type="text" name="username" class="form-control">
+                <input type="text" name="username" class="form-control">
             </div>
+
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" name="password" class="form-control">
             </div>
-            <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+
+            <div class="form-group">
+                <select name="" id="">
+                    <option value="">Id</option>
+                </select>
+            </div>
+
+            <input class="btn btn-primary" type="submit" name="submit" value="Update">
+
     </div>
 
 </div>
