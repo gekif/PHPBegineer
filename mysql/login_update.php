@@ -1,21 +1,6 @@
 <?php
-
 include 'db.php';
-
-$usename = $_POST['username'];
-$password = $_POST['password'];
-$id = $_POST['id'];
-
-$query = "UPDATE users SET username = '$username', password = '$password' WHERE 
-          id = $id ";
-
-$result = mysqli_query($connection, $query);
-
-if (!$result) {
-    die('Data cannot update, the error says: ' . mysqli_error($connection));
-}
-
-
+include 'functions.php';
 ?>
 
 <!doctype html>
@@ -45,13 +30,15 @@ if (!$result) {
             </div>
 
             <div class="form-group">
-                <select name="id" id="">
-                    <option value="">Id</option>
+                <select name="" id="">
+                    <?php
+                        showAllData();
+                    ?>
                 </select>
             </div>
 
             <input class="btn btn-primary" type="submit" name="submit" value="Update">
-
+        </form>
     </div>
 
 </div>
