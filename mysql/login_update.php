@@ -1,6 +1,22 @@
 <?php
 include 'db.php';
 include 'functions.php';
+
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $id = $_POST['id'];
+
+    $query = "UPDATE users SET 
+                  username = '$username', 
+                  password = '$password' 
+              WHERE id = $id";
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die('Data cannot inserted' . mysqli_error($connection));
+    }
+}
 ?>
 
 <!doctype html>
@@ -18,19 +34,19 @@ include 'functions.php';
 <div class="container">
 
     <div class="col-xs-6">
-        <form method="post" action="login_create.php">
+        <form method="post" action="login_update.php">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" class="form-control">
+                <input type="text" name="username" class="form-control" value="">
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" class="form-control" value="">
             </div>
 
             <div class="form-group">
-                <select name="" id="">
+                <select name="id">
                     <?php
                         showAllData();
                     ?>
