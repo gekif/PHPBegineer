@@ -11,13 +11,14 @@ if (isset($_POST['submit'])) {
         die('Database failed to connect');
     }
 
+    $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
-    /*if ($username && $password) {
-        echo $username;
-        echo $password;
-    } else {
-        echo 'Nay';
-    }*/
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die('Data cannot insert, the error says: ' . mysqli_error($connection));
+    }
+
 }
 ?>
 
