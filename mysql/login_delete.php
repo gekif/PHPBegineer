@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
 <div class="container">
 
     <div class="col-xs-6">
+        <h1 class="text-center">Delete</h1>
         <form method="post" action="login_delete.php">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -43,6 +44,7 @@ if (isset($_POST['submit'])) {
 
             <input class="btn btn-primary" type="submit" name="submit" value="Delete">
         </form>
+        <a href="crud.html">back to menu</a>
     </div>
 
 </div>
