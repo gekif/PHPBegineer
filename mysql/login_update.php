@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 
             <input class="btn btn-primary" type="submit" name="submit" value="Update">
         </form>
-        <a href="crud.html">back to menu</a>
+        <a href="index.php">back to menu</a>
     </div>
 
 </div>
