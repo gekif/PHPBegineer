@@ -3,8 +3,8 @@ include 'db.php';
 
 function showAllData() {
     global $connection;
-    $query = "SELECT * FROM users";
 
+    $query = "SELECT * FROM users";
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
@@ -31,7 +31,43 @@ function updateTable() {
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
-        die('Data cannot inserted' . mysqli_error($connection));
+        die('Data cannot updated, the error says ' . mysqli_error($connection));
+    }else {
+        echo 'Update Success';
+    }
+
+}
+
+
+function createTable() {
+    global $connection;
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die('Data cannot insert, the error says: ' . mysqli_error($connection));
+    } else {
+        echo 'Insert Success';
+    }
+}
+
+
+function deleteTable() {
+    global $connection;
+    $id = $_POST['id'];
+
+    $query = "DELETE FROM users 
+              WHERE id = $id";
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die('Data cannot deleted, the error says: ' . mysqli_error($connection));
+    } else {
+        echo 'Delete Success';
     }
 
 }

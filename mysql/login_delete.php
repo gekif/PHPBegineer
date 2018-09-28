@@ -1,10 +1,9 @@
 <?php
-
 include 'db.php';
 include 'functions.php';
 
 if (isset($_POST['submit'])) {
-    createTable();
+    deleteTable();
 }
 ?>
 
@@ -23,17 +22,27 @@ if (isset($_POST['submit'])) {
 <div class="container">
 
     <div class="col-xs-6">
-        <form method="post" action="login_create.php">
+        <form method="post" action="login_delete.php">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" class="form-control">
+                <input type="text" name="username" class="form-control" value="">
             </div>
+
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" class="form-control" value="">
             </div>
-            <input class="btn btn-primary" type="submit" name="submit" value="Submit">
 
+            <div class="form-group">
+                <select name="id">
+                    <?php
+                        showAllData();
+                    ?>
+                </select>
+            </div>
+
+            <input class="btn btn-primary" type="submit" name="submit" value="Delete">
+        </form>
     </div>
 
 </div>
