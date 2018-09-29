@@ -1,4 +1,13 @@
 <?php include "functions.php" ?>
+<?php
+session_start();
+$_SESSION['message'] = 'Hello';
+$name = 'fikar';
+$value = 'anjay';
+$expire = time() + (60 * 60 * 24 * 7);
+setcookie($name, $value, $expire);
+
+?>
 <?php include "includes/header.php" ?>
 
 
@@ -14,7 +23,26 @@
 
 
 			<article class="main-content col-xs-8">
-			
+
+                <?php
+
+                if (isset($_GET['source'])) {
+                    echo $_GET['source'] . '<br>';
+                }
+
+                ?>
+
+                <a href="9.php?source=30134">Click Here</a><br>
+
+                <?php
+                if (isset($_COOKIE[$name])) {
+                    echo $_COOKIE[$name] . '<br>';
+                }
+
+                if (isset($_SESSION['message'])) {
+                    echo $_SESSION['message'];
+                }
+                ?>
 		
 	
 	<?php 
@@ -26,7 +54,6 @@
 
 		Step 3 - Start a session and set it to value, any value you want.
 	*/
-	
 	?>
 
 
