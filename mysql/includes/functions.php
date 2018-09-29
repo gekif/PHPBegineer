@@ -20,9 +20,10 @@ function showAllData() {
 
 function updateTable() {
     global $connection;
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $id = $_POST['id'];
+
+    $username = mysqli_real_escape_string($connection, $_POST['username']);
+    $password = mysqli_real_escape_string($connection, $_POST['password']);
+    $id = mysqli_real_escape_string($connection, $_POST['id']);
 
     $query = "UPDATE users SET 
                   username = '$username', 
@@ -42,8 +43,8 @@ function updateTable() {
 function createTable() {
     global $connection;
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = mysqli_real_escape_string($connection, $_POST['username']);
+    $password = mysqli_real_escape_string($connection, $_POST['password']);
 
     $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     $result = mysqli_query($connection, $query);
@@ -58,7 +59,8 @@ function createTable() {
 
 function deleteTable() {
     global $connection;
-    $id = $_POST['id'];
+
+    $id = mysqli_real_escape_string($connection, $_POST['id']);
 
     $query = "DELETE FROM users 
               WHERE id = $id";
