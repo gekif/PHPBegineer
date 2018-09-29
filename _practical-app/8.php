@@ -26,6 +26,12 @@
 		Step 4 - echo the variable
 
 	*/
+	$text = 'Anjing elu';
+    $hashFormat = "$2y$10$";
+    $salt = "iusesomecrazystrings22";
+    $hash_and_salt = $hashFormat . $salt;
+	$encrypt = crypt($text, $hash_and_salt);
+	echo $encrypt;
 	
 	?>
 
