@@ -1,6 +1,6 @@
 <?php
-include 'header.php';
-include 'footer.php';
+include 'includes/header.php';
+include 'includes/footer.php';
 ?>
 
 <h1>Welcome to the Crud Site</h1>
@@ -11,3 +11,4 @@ include 'footer.php';
     <li><a href="login_update.php">Update</a></li>
     <li><a href="login_delete.php">Delete</a></li>
 </ul>
+

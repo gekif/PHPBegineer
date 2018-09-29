@@ -1,9 +1,9 @@
 <?php
 
-include 'db.php';
-include 'functions.php';
-include 'header.php';
-include 'footer.php';
+include 'includes/db.php';
+include 'includes/functions.php';
+include 'includes/header.php';
+include 'includes/footer.php';
 
 if (isset($_POST['submit'])) {
     createTable();
