@@ -69,5 +69,4 @@ function deleteTable() {
     } else {
         echo 'Delete Success';
     }
-
 }

@@ -1,15 +1,15 @@
 <?php
 
-include 'db.php';
+include 'includes/db.php';
+include 'includes/header.php';
+include 'includes/footer.php';
 
 $query = "SELECT * FROM users";
-
 $result = mysqli_query($connection, $query);
 
 if (!$result) {
     die('Data cannot select, the error says: ' . mysqli_error($connection));
 }
-
 
 ?>
 
@@ -28,6 +28,7 @@ if (!$result) {
 <div class="container">
 
     <div class="col-xs-6">
+        <h1 class="text-center">Read</h1>
         <?php
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "$row[username] and $row[password]";

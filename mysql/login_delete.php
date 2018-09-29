@@ -35,7 +35,6 @@ if (isset($_POST['submit'])) {
 
             <input class="btn btn-primary" type="submit" name="submit" value="Delete">
         </form>
-        <a href="index.php">back to menu</a>
     </div>
 
 </div>
