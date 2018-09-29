@@ -23,11 +23,22 @@
 		Step 5: Instantiate the class / create object and call it pitbull
 
 Step 6: Call the method ShowAll
-
-	
-
-		
 	*/
+
+	class Dog {
+	    var $eye = 'blue';
+	    var $colors = 'chocolate';
+	    var $nose = 'pesek';
+	    var $fur = 'plet';
+
+	    function showAll() {
+	        echo "My dog has $this->eye eyes, 
+	             $this->colors skin, $this->nose nose, and $this->fur fur, very cute right";
+        }
+    }
+
+    $pitbull = new Dog();
+	$pitbull->showAll();
 	
 	?>
 
