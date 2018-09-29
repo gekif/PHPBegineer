@@ -7,9 +7,8 @@ include 'includes/footer.php';
 if (isset($_POST['submit'])) {
     updateTable();
 }
+
 ?>
-
-
 
 <div class="container">
 
@@ -18,7 +17,7 @@ if (isset($_POST['submit'])) {
         <form method="post" action="login_update.php">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" class="form-control" value="">
+                    <input type="text" name="username" class="form-control" value="">
             </div>
 
             <div class="form-group">

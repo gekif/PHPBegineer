@@ -7,6 +7,7 @@ include 'includes/footer.php';
 $query = "SELECT * FROM users";
 $result = mysqli_query($connection, $query);
 
+
 if (!$result) {
     die('Data cannot select, the error says: ' . mysqli_error($connection));
 }
@@ -29,10 +30,13 @@ if (!$result) {
 
     <div class="col-xs-6">
         <h1 class="text-center">Read</h1>
+        <p><strong>List of Active User</strong></p>
         <?php
+            $c = 1;
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "$row[username] and $row[password]";
+                echo "$c. $row[username]";
                 echo '<br>';
+                $c++;
             }
         ?>
     </div>

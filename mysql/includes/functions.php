@@ -1,6 +1,14 @@
 <?php
 include 'db.php';
 
+function encrypt($password) {
+    $hashFormat = "$2y$10$";
+    $salt = "iusesomecrazystrings22";
+    $hash_and_salt = $hashFormat . $salt;
+    $password = crypt($password, $hash_and_salt);
+    return $password;
+}
+
 function showAllData() {
     global $connection;
 
@@ -23,6 +31,7 @@ function updateTable() {
 
     $username = mysqli_real_escape_string($connection, $_POST['username']);
     $password = mysqli_real_escape_string($connection, $_POST['password']);
+    $password = encrypt($password);
     $id = mysqli_real_escape_string($connection, $_POST['id']);
 
     $query = "UPDATE users SET 
@@ -45,6 +54,7 @@ function createTable() {
 
     $username = mysqli_real_escape_string($connection, $_POST['username']);
     $password = mysqli_real_escape_string($connection, $_POST['password']);
+    $password = encrypt($password);
 
     $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     $result = mysqli_query($connection, $query);
